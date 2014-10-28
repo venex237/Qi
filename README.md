@@ -5,4 +5,5 @@ Qi is a tiny prototype of a social network. It is currently a school project and
 
 ____________________________________
 Michael Köppl
+
 Bruno Kovacevic
