@@ -40,7 +40,9 @@ class Http_Server {
          */
         request.response.write("Oh, hello there!");
         request.response.close();
-      });
+
+      },onDone: () => print("Done with request, returned 'Oh, hello there!'.") /*output when finished with request*/
+       ,onError: (e) => print(e.toString()));
 
     }).catchError((e) => print(e.toString())); /*error catching*/
   }
