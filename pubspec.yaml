@@ -1,0 +1,5 @@
+name: DartServer
+dependencies:
+  browser: any
+  route: any
+  route_hierarchical: any

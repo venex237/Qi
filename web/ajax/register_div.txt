@@ -1,0 +1,8 @@
+<script id="ajaxreg" type="text/javascript" src="register/register.js"></script>
+
+<paper-input id="emailinput" label="email" required error="This input requires a valid email!"></paper-input>
+<paper-input id="pwinput" label="password" type="password" required error="This input requires a value!"></paper-input>
+<paper-input id="pwrepeatinput" label="password" type="password" required error="This input requires a value!"></paper-input>
+<paper-input id="pnumberinput" label="phone number" required error="This input requires a value!"></paper-input>
+<paper-button id="submitreg" raisedButton class="colored" onclick="registerMe();">Submit</paper-button>
+<paper-shadow z="3"></paper-shadow>
