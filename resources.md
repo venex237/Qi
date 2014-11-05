@@ -1,5 +1,9 @@
 RESOURCE FILE
 
+_____________________________________________________________
+http://dartery.blogspot.co.at/2013/12/building-blog-in-dart-step-1-serving.html
+_____________________________________________________________
+
 https://www.dartlang.org/articles/io/#writing-web-servers
 
 https://pub.dartlang.org/packages/route
