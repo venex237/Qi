@@ -1,6 +1,6 @@
 /* http_server.dart
  *
- * Handles all HTTP server requests
+ * Handles all HTTP server requests and does the routing (for now)
  *
  * Written by Michael Köppl
  */
@@ -8,76 +8,155 @@
 library http_server;
 
 import 'dart:io';
-import 'package:route/server.dart';
-import '../ws/ws.dart';
 
 
 class Http_Server {
 
+
+  /*__________________________________________________________________________________________________*/
+  /*                                               VARIABLES                                          */
+  /*__________________________________________________________________________________________________*/
+  var address; /*stores the address of the http server*/
+  var host; /*stores the port of the http server*/
+  var server;/*stores http server itself*/
+
+
+
+
+  /*__________________________________________________________________________________________________*/
+  /*                                        CONSTRUCTOR, START & STOP                                 */
+  /*__________________________________________________________________________________________________*/
+
   /*
    * constructor
-   * opens a new http server
+   * stores address and port given to it
    */
-  Http_Server() {
+  Http_Server(var a, var h) {
+    address = a;
+    host = h;
+  }
 
+  start(){
     /*
      * open new http server on selected port
      *
      * for further explanations on http server --> https://www.dartlang.org/docs/tutorials/httpserver/
      */
-    HttpServer.bind(InternetAddress.LOOPBACK_IP_V4, 4041)
-    .then(listenForRequests)
-    .catchError((e) => print (e.toString()));
-
-  }
-
-
-  listenForRequests(HttpServer _server) {
-
-    /*
-     * start listening for http requests
-     */
-    _server.listen((HttpRequest request) {
+    HttpServer.bind(address, host).then((s){
 
       /*
-       * if the request is a GET request
+       * storing server object
        */
-      if (request.method == 'GET') {
+      server = s;
 
-        /*
-         * call GET event handler
+      print("\n\rHTTP SERVER LISTENING ON PORT $host...");
+
+
+      server.asBroadcastStream()
+      /*
+         * handling / requests (e.g.: www.lel.com/)
          */
-        handleGet(request);
+        ..where((r) => r.uri.path == '/').listen((request) {
+        _handleRootRequest(request);
+      })
 
-      } else {
-
-        /*
-         * HTTP ERROR if request is not a GET request
+      /*
+         * handling /people requests (e.g.: www.lel.com/people)
          */
-        request.response.statusCode = HttpStatus.METHOD_NOT_ALLOWED;
-        request.response.write("Unsupported request: ${request.method}.");
-        request.response.close();
-      }
-    },
-    onDone: () => print('No more requests.'),
-    onError: (e) => print(e.toString()) );
+        ..where((r) => r.uri.path == '/people').listen((request) {
+        _handlePeopleRequest(request);
+      });
+    });
   }
 
   /*
-   * GET event handler
+   * close http server
    */
-  void handleGet(HttpRequest request) {
+  stop(){
+    server.close();
+  }
 
-    /*
-     * get username from u parameter in URL
-     *
-     * e.g.: www.qi.com/?u=brunoisfgt
-     */
-    String username = request.uri.queryParameters['u'];
 
+
+
+
+  /*__________________________________________________________________________________________________*/
+  /*                                        OUTPUT & REQUEST HANDLERS                                 */
+  /*__________________________________________________________________________________________________*/
+
+
+  /*
+   * print out request data on incoming request
+   */
+  void printRequestData(var request, String servedfile){
     /*
-     * return HTTP status code 200 (OK)
+     * add 1 clear line
+     * print data
      */
-    request.response.statusCode = HttpStatus.OK;
+    print('\n\r${new DateTime.now()} ${request.method} for ${request.uri.path} --> served $servedfile');
+  }
+
+  /*
+   * handle requests for /
+   */
+  _handleRootRequest(request){
+    /*
+     * switch between request methods, such as GET, POST, etc.
+     */
+    switch(request.method) {
+      case 'GET':
+        /*
+         * try to print IP
+         */
+        //print('By --> ${request.connectionInfo.remoteHost}');
+
+        /*
+         * print request information
+         */
+        printRequestData(request, '/web/lel.html');
+
+        /*
+         * set contentType of response
+         */
+        request.response.headers.contentType = new ContentType("text", "html");
+
+        /*
+         * return/pipe file directly via response
+         */
+        new File('web/lel.html').openRead().pipe(request.response);
+        break;
+
+      case 'POST':
+        /*handle post request*/
+        break;
+    }
+  }
+
+  /*
+   * handle requests for /people
+   */
+  _handlePeopleRequest(request){
+    switch(request.method) {
+      case 'GET':
+
+        /*
+         * print request information
+         */
+        printRequestData(request, '/web/people.html');
+
+        /*
+         * set contentType of response
+         */
+        request.response.headers.contentType = new ContentType("text", "html");
+
+        /*
+         * return/pipe file directly via response
+         */
+        new File('web/people.html').openRead().pipe(request.response);
+        break;
+
+      case 'POST':
+        break;
+    }
   }
 }

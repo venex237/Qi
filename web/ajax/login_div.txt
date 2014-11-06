@@ -1,4 +1,0 @@
-<paper-input id="emailinput" label="email" required error="This input requires a value!"></paper-input>
-<paper-input id="pwinput" label="password" type="password" required error="This input requires a value!"></paper-input>
-<paper-button id="submitlogin" raisedButton class="colored" onclick="logMeIn();">Submit</paper-button>
-<paper-shadow z="3"></paper-shadow>
