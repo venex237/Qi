@@ -1,5 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+    #bodydiv(style='height:100%;width:100%;')
+        core-header-panel
+            core-toolbar.small
+                p#qiheader Qi
+                paper-tabs#tabs(selected='login', noink self-end='self-end')
+                    paper-tab(name='login') Login
+                    paper-tab(name='register') Register
+                //main page content will go here
+                //continue here

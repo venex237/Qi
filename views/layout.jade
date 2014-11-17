@@ -1,7 +1,65 @@
 doctype html
 html
   head
-    title= 'Qi'
+    title
+
+    //never delete this fucking line
+    //not a single polymer element works without it
+    //lel
+    script(src='/bower_components/platform/platform.js')
+
+    //imports for polymer elements
+    link(rel='import', href='/components/polymer/polymer.js')
+    link(rel='import', href='/components/font-roboto/roboto.html')
+    link(rel='import', href='/components/core-header-panel/core-header-panel.html')
+    link(rel='import', href='/components/core-toolbar/core-toolbar.html')
+    link(rel='import', href='/components/core-icons/core-icons.html')
+    link(rel='import', href='/components/paper-tabs/paper-tabs.html')
+    link(rel='import', href='/components/paper-button/paper-button.html')
+
     link(rel='stylesheet', href='/stylesheets/style.css')
+
+    script(src='/javascripts/bg_randomizer.js')
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+
+
+    script.
+
+      function randomizeBackground(){
+        /*background image randomizer*/
+        switch(Math.floor((Math.random() * 3) + 1)){
+          case 1:
+            $('body').css('background', '#000 url("http://i.imgur.com/0M8rLZG.jpg")');
+            //$('#errorDiv').css('color', 'white');
+            break;
+          case 2:
+            $('body').css('background', '#000 url("http://i.imgur.com/g7ONRRQ.jpg")');
+            //$('#errorDiv').css('color', 'white');
+            break;
+          case 3:
+            $('body').css('background', '#000 url("http://imgur.com/OTfm92s.jpg")');
+            //$('#errorDiv').css('color', 'black');
+            break;
+          default:
+            $('body').css('background', '#000 url("http://imgur.com/OTfm92s.jpg")');
+            //$('#errorDiv').css('color', 'black');
+            break;
+        }
+      }
+
+      $( document ).ready(function() {
+        randomizeBackground();
+      })
+
+      $(function(){
+        var x = 0;
+        setInterval(function(){
+          x-=1;
+          $('body').css('background-position', x + 'px 0');
+        }, 80 /*speed; higher is slower*/);
+      })
+
+
   body
     block content
