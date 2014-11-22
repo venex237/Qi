@@ -1,0 +1,6 @@
+<center>
+  <hr noshade>
+  <h3>Contributors</h3>
+  <p>insert contributors here...</p>
+</center>
+<paper-shadow z="3"></paper-shadow>
