@@ -1,0 +1,27 @@
+<script id="ajaxreg" type="text/javascript" src="register/register.js"></script>
+<div style="background-color:#5677fc; height:20%; width:100%;"></div>
+<div style="height:25%";></div>
+<paper-input id="regpseudoinput" label="pseudonym (optional)"></paper-input>
+<div style="height:15px;"></div>
+
+<!-- next button -->
+<paper-fab icon="arrow-forward" class='regnextbuttons' id='regnamenext' onclick='
+  if((pseudo = document.querySelector("#regpseudoinput").value) != ""){
+    if(pseudo.length >= 3){
+      setPseudo(pseudo);
+      printError("");
+      animateDiv("#panelcontainer", "clip", true);
+      loadXML("ajax/registration/register_email.txt", "panelcontainer");
+    }else{
+      printError("pseudo is too short");
+    }
+  }else{
+    setPseudo(pseudo);
+    printError("");
+    animateDiv("#panelcontainer", "clip", true);
+    loadXML("ajax/registration/register_email.txt", "panelcontainer");
+  }
+'>
+</paper-fab>
+
+<paper-shadow z="3"></paper-shadow>

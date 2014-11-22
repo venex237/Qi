@@ -1,0 +1,28 @@
+<div style="background-color:#5677fc; height:20%; width:100%;"></div>
+<div style="height:25%";></div>
+<paper-input id="regemailinput" label="email" type="email"></paper-input>
+<div style="height:15px;"></div>
+
+<!-- next button -->
+<paper-fab icon="arrow-forward" class='regnextbuttons' id='regemailnext' onclick='
+  if((email = document.querySelector("#regemailinput").value) != ""){
+    if(email.length > 4){
+      if(email.indexOf("@" > -1)){
+        setEmail(email);
+        printError("");
+        animateDiv("#panelcontainer", "clip", true);
+        adjustDiv(230);
+        loadXML("ajax/registration/register_pw.txt", "panelcontainer");
+      }else{
+        printError("email does not contain @");
+      }
+    }else{
+      printError("email is too short");
+    }
+  }else{
+    printError("no data given at all. srsly?");
+  }
+'>
+</paper-fab>
+
+<paper-shadow z="3"></paper-shadow>

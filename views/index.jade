@@ -4,10 +4,18 @@ block content
 
     #bodydiv(style='height:100%;width:100%;')
         core-header-panel
-            core-toolbar.small
+            core-toolbar.medium
                 p#qiheader Qi
-                paper-tabs#tabs(selected='login', noink self-end='self-end')
-                    paper-tab(name='login') Login
-                    paper-tab(name='register') Register
-                //main page content will go here
-                //continue here
+                div(flex='', horizontal='', layout='')
+                paper-icon-button#searchiconbutton(icon='search')
+                paper-icon-button#moreiconbutton(icon='more-vert')
+                .bottom.fit(horizontal='', layout='')
+                    paper-tabs#tabs(selected='0', flex='', style='max-width: 300px;', noink='', self-end='')
+                        paper-tab#logintab Login
+                        paper-tab#registertab Register
+                        paper-tab#abouttab About us
+            .container(layout='', vertical='', center='')
+            center
+                div(style='height:100px')
+                #panelcontainer
+                #errorDiv
