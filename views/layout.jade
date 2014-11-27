@@ -6,6 +6,7 @@ html
     //never delete this fucking line
     //not a single polymer element works without it
     //lel
+    //no i'm srs dun do dis
     script(src='/bower_components/platform/platform.js')
 
     //imports for polymer elements
@@ -19,10 +20,15 @@ html
     link(rel='import', href='/bower_components/paper-input/paper-input.html')
     link(rel='import', href='/bower_components/paper-fab/paper-fab.html')
     link(rel='import', href='/bower_components/paper-shadow/paper-shadow.html')
+<<<<<<< HEAD
+=======
+    link(rel='import', href='/bower_components/paper-dialog/paper-dialog.html')
+>>>>>>> master
 
     link(rel='stylesheet', href='/stylesheets/style.css')
 
     //jQuery
+<<<<<<< HEAD
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
     //AngularJS
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js')
@@ -30,14 +36,37 @@ html
     script(src='/javascripts/ajax.js')
     script(src='/javascripts/clickh.js')
     script(src='/javascripts/bg_randomizer.js')
+=======
+    //script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(src='/jquery/jquery.js')
+
+    //AngularJS
+    //script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js')
+
+    script(src='/javascripts/ajax.js')
+    script(src='/javascripts/clickh.js')
+    script(src='/javascripts/bg.js')
+>>>>>>> master
     script(src='/javascripts/startscript.js')
 
     script.
       $(document).ready(function() {
+<<<<<<< HEAD
         setClickListeners();
         ajax('login/', 'login_div');
         randomizeBackground();
         animateBackground();
+=======
+
+        //click listeners for tabs in clickh.js
+        setClickListeners();
+
+        //get logindiv via ajax method in ajax.js
+        ajax('login/', 'login_div');
+
+        //start method in startscript.js
+        start();
+>>>>>>> master
       });
 
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function randomizeBackground(){
 
     /*
@@ -35,4 +36,9 @@ function animateBackground(){
             $('body').css('background-position', x + 'px 0');
         }, 80 /*speed; higher is slower*/);
     })
+=======
+function start(){
+  randomizeBackground();
+  animateBackground();
+>>>>>>> master
 }
