@@ -7,19 +7,11 @@ function ajax(dir, file){
     console.log(file);
 
     $.ajax({
-<<<<<<< HEAD
         type:'GET',
         url:('/ajax/' + dir + file + '.txt'),
         success: function(data){
             $('#panelcontainer').html(data);
         }
-=======
-      type:'GET',
-      url:('/ajax/' + dir + file + '.txt'),
-      success: function(data){
-        $('#panelcontainer').html(data);
-      }
->>>>>>> master
     });
 
 
@@ -37,16 +29,9 @@ function ajax(dir, file){
  */
 function adjustDiv(divHeight /*defines the new height of the div*/){
     $('#panelcontainer')
-<<<<<<< HEAD
         .animate({
             height: divHeight,
             width: 450
         });
-=======
-      .animate({
-        height: divHeight,
-        width: 450
-      });
->>>>>>> master
     $('#errorDiv').html = "";
 }
