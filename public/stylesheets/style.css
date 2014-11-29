@@ -1,9 +1,15 @@
 html,body {
   height: 100%;
   margin: 0;
+  padding: 0;
   /*background-color: #E5E5E5;*/
   /*background-image:url("http://imgur.com/OTfm92s.jpg");*/
   font-family: 'RobotoDraft', sans-serif;
+}
+
+#bgvideo{
+  width: 100%;
+  height: auto;
 }
 
 /* MATERIAL DESIGN */
@@ -45,6 +51,7 @@ core-toolbar {
     position: center;
     font-size: 26px;
   }
+
 
   #panelcontainer{ /*div container for login, registration and about panel*/
     width: 450px;

@@ -1,22 +1,47 @@
+//modules
 var express = require('express');
+var http = require('http');
+var https = require('https');
 var path = require('path');
 var favicon = require('serve-favicon');
 var scribe = require('scribe'); /*npm install git+https://github.com/bluejamesbond/Scribe.js.git*/
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 
+// routes
 var routes = require('./routes/index');
 var people = require('./routes/people');
 var users = require('./routes/users');
 var ajax = require('./routes/ajax');
 var images = require('./routes/images');
 
+/* ==================================================================================
+ *                                  VARIABLES
+ */
+
+// port variables
+var http_port = process.env.port || 1337;
+var https_port = process.env.port || 1338;
+
+var privateKey  = fs.readFileSync('./sslcert/key.pem');
+var certificate = fs.readFileSync('./sslcert/cert.pem');
+
+var options = {key: privateKey, cert: certificate};
+
+/*
+ *                                END VARIABLES
+/* ==================================================================================*/
+
+
+
+
+// initialise express
 var app = express();
 
 /* ==================================================================================
  *                              SCRIBE LOGGING
  *                  https://github.com/bluejamesbond/Scribe.js
- * ==================================================================================
  */
 
 // Configuration --> logging
@@ -44,9 +69,7 @@ scribe.addLogger('normal', true, true, 'white');
 scribe.addLogger('low', true, true, 'grey');
 scribe.addLogger('info', true, true, 'cyan');
 
-
-/* ==================================================================================
- *                              SCRIBE LOGGING
+/*                              END SCRIBE LOGGING
  * ==================================================================================
  */
 
@@ -124,4 +147,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-module.exports = app;
+http.createServer(app).listen(http_port);
+console.info('HTTP Server listening on ' + http_port + '...');
+https.createServer(options, app).listen(https_port);
+console.info('HTTPS Server listening on ' + https_port + '...');
