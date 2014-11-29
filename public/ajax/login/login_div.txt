@@ -1,5 +1,6 @@
+<paper-shadow z="3">
 <paper-input id="emailinput" label="email or pseudonym"></paper-input>
 <paper-input id="pwinput" label="password" type="password"></paper-input>
 <br>
 <paper-fab icon="done" id='loginfab' onclick='logMeIn();'></paper-fab>
-<paper-shadow z="3"></paper-shadow>
+</paper-shadow>
