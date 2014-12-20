@@ -2,7 +2,7 @@ function randomizeBackground(){
 
   /*
    * TO DO
-   * use images hosted on server instead
+   * use images hosted on server instead (probably done)
    */
 
 
