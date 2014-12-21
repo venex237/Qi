@@ -55,7 +55,7 @@ core-toolbar {
 
   #panelcontainer{ /*div container for login, registration and about panel*/
     width: 450px;
-    height: 195px;
+    height: 210px;
     background: #ffffff;
   }
 
@@ -71,7 +71,7 @@ core-toolbar {
   }
 
   #loginfab{ /*login button*/
-    margin-top: 15px;
+    margin-top: 0px;
     background: #e91e63;
   }
   /* Login elements end */
@@ -85,10 +85,18 @@ core-toolbar {
   }
 
   /* register_name.txt */
-  .regnextbuttons{ /*register button*/
-    margin-top: 5px;
+  #regfab{ /*register button*/
+    margin-top: 0px;
     background: #5677fc;
     color: #ffffff;
   }
   /* Registration elements */
+
+  /*about elements*/
+  #accfab{
+    background:#00E676;
+    color: #ffffff;
+    margin-top: 20px;
+  }
+  /*about elements*/
 }

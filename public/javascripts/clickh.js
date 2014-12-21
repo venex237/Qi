@@ -3,19 +3,22 @@
  */
 function setClickListeners(){
     $('#logintab').click(function(){
+        adjustDiv(100, '#spacekeeper');
+        adjustDiv(210);
         ajax('login/', 'login_div');
-        adjustDiv(195);
         console.log('login tab clicked');
     });
 
     $('#registertab').click(function(){
-        ajax('registration/', 'register_div_email');
-        adjustDiv(200);
+        adjustDiv(10, '#spacekeeper');
+        adjustDiv(407);
+        ajax('registration/', 'registration_div');
         console.log('register tab clicked');
     });
 
     $('#abouttab').click(function(){
         ajax('misc/', 'about_div');
+        adjustDiv(100, '#spacekeeper');
         adjustDiv(235);
         console.log('about tab clicked');
     })
