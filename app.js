@@ -8,6 +8,7 @@ var scribe = require('scribe'); /*npm install git+https://github.com/bluejamesbo
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+var passport = require('passport');
 
 // routes
 var routes = require('./routes/index');
@@ -147,7 +148,18 @@ app.use(function(err, req, res, next) {
 });
 
 
-http.createServer(app).listen(http_port);
-console.info('HTTP Server listening on ' + http_port + '...');
-https.createServer(options, app).listen(https_port);
-console.info('HTTPS Server listening on ' + https_port + '...');
+try {
+    http.createServer(app).listen(http_port);
+    console.info('HTTP Server listening on ' + http_port + '...');
+}catch(ex){
+    console.error("COULDN'T START HTTP SERVER!");
+    console.error(ex);
+}
+
+try {
+    https.createServer(options, app).listen(https_port);
+    console.info('HTTPS Server listening on ' + https_port + '...');
+}catch(ex){
+    console.error("COULDN'T START HTTPS SERVER!");
+    console.error(ex);
+}
