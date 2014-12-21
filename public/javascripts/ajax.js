@@ -26,11 +26,20 @@ function ajax(dir, file){
 /*
  * animates the container div
  */
-function adjustDiv(divHeight /*defines the new height of the div*/){
+function adjustDiv(divHeight /*defines the new height of the div*/, div){
+  if(div == undefined){
     $('#panelcontainer')
-      .animate({
-        height: divHeight,
-        width: 450
-      });
+        .animate({
+          height: divHeight,
+          width: 450
+        });
     $('#errorDiv').html = "";
+  }else {
+    $(div)
+        .animate({
+          height: divHeight,
+          width: 450
+        });
+    $('#errorDiv').html = "";
+  }
 }
