@@ -1,5 +1,5 @@
 <div id="registrationdiv" style="position:relative; height: 100%;">
-    <div style="background-color:#5677fc; height:8%; width:100%;"></div>
+    <div style="background-color:#5677fc; height:6%; width:100%;"></div>
     <!--<div style="height:25%";></div>-->
     <paper-input id="regemailinput" label="email" type="email"></paper-input>
     <div style="height:15px;"></div>
@@ -10,5 +10,5 @@
     <paper-input id="regpwrepeatinput" label="repeat password" type="password"></paper-input>
     <div style="height:10px;"></div>
     <paper-shadow z="2"></paper-shadow>
-    <paper-fab icon="arrow-forward" id='regfab' onclick=''></paper-fab>
+    <paper-fab icon="arrow-forward" id='regfab' onclick="registerMe();"></paper-fab>
 </div>
