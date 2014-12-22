@@ -1,4 +1,0 @@
-function start(){
-  randomizeBackground();
-  animateBackground();
-}

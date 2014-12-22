@@ -1,9 +1,0 @@
-<div id="logindiv" style="position:relative; height: 100%;">
-<div style="background-color:#e91e63; height:10%; width:100%;"></div>
-<paper-shadow z="3">
-<paper-input id="emailinput" label="email or pseudonym"></paper-input>
-<paper-input id="pwinput" label="password" type="password"></paper-input>
-<br>
-<paper-fab icon="done" id='loginfab' onclick='logMeIn();'></paper-fab>
-<paper-shadow z="2"></paper-shadow>
-</div>

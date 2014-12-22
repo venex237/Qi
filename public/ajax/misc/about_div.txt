@@ -1,9 +1,0 @@
-<div id="aboutdiv" style="position:relative; height:100%">
-<div style="background-color:#00E676; height:8%; width:100%;"></div>
-<p>Alabo Derefaka</p>
-<p>Bruno Kovacevic</p>
-<p>Michael Köppl</p>
-<p>Martina Simic</p>
-<paper-fab icon="done" id='accfab' onclick=''></paper-fab>
-<paper-shadow z="2"></paper-shadow>
-</div>
