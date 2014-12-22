@@ -1,0 +1,58 @@
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /*background-color: #E5E5E5;*/
+  /*background-image:url("http://imgur.com/OTfm92s.jpg");*/
+  font-family: 'RobotoDraft', sans-serif;
+}
+
+md-whiteframe {
+  background: #ffffff;
+  margin: 50px;
+  padding: 15px;
+  padding-left: 40px;
+  padding-bottom: 1px;
+  max-width: 500px;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+#headertitle{
+  font-size: 30px;
+}
+
+.form_wrapper{
+    max-width: 400px;
+    max-height: 470px;
+}
+
+.form_wrapper form{
+    display:none;
+    background:#fff;
+}
+form.active{
+    display:block;
+}
+
+form.login{
+    /*width:350px;*/
+}
+form.register{
+}
+
+form.bottom{
+    margin:50px;
+}
+
+#panelframe{
+    min-width: 450px;
+}
+
+.linkform{
+    margin-bottom: 15px;
+}
+
+.panelheader{
+    font-size: 20px;
+}
