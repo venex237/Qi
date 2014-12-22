@@ -21,6 +21,8 @@ function ajax(dir, file){
    * https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history#The_pushState()_method
    */
   history.pushState(history.state, document.title, '?p=' + file);
+  //history.pushState(history.state, 'Qi', '?p=' + file);
+  document.title = 'Qi';
 }
 
 /*

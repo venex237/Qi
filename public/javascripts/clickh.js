@@ -11,7 +11,7 @@ function setClickListeners(){
 
     $('#registertab').click(function(){
         adjustDiv(10, '#spacekeeper');
-        adjustDiv(407);
+        adjustDiv(400);
         ajax('registration/', 'registration_div');
         console.log('register tab clicked');
     });
