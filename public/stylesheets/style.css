@@ -11,7 +11,7 @@ md-whiteframe {
   background: #ffffff;
   margin: 50px;
   padding: 15px;
-  padding-left: 40px;
+  padding-left: 25px;
   padding-bottom: 1px;
   max-width: 500px;
   margin-left: auto ;
@@ -42,7 +42,8 @@ form.register{
 }
 
 form.bottom{
-    margin:50px;
+    margin:20px;
+    max-width:100px;
 }
 
 #panelframe{
@@ -55,4 +56,8 @@ form.bottom{
 
 .panelheader{
     font-size: 20px;
+}
+
+.bottom{
+    max-height: 170px;
 }

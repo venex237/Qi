@@ -3,7 +3,7 @@
   <meta charset="utf8" />
   <title>Qi</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/bower_components/angular-animate/angular-animate.js"></script>
   <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-route.min.js"></script>-->
@@ -61,11 +61,11 @@
 
               <h3 class="panelheader">Register</h3>
               <md-content>
-                <md-text-float type="text" ng-model="registeremailpseudo" label="email/pseudo" class="long"></md-text-float>
-                <md-text-float type="text" ng-model="registername" label="name" class="long"></md-text-float>
-                <md-text-float type="text" ng-model="registerpseudo" label="pseudo (optional)" class="long"></md-text-float>
-                <md-text-float type="password" ng-model="registerpw" label="password" class="long"></md-text-float>
-                <md-text-float type="password" ng-model="registerpwr" label="repeat password" class="long"></md-text-float>
+                <md-text-float type="text" ng-model="registeremailpseudoinput" label="email/pseudo" class="long"></md-text-float>
+                <md-text-float type="text" ng-model="registernameinput" label="name" class="long"></md-text-float>
+                <md-text-float type="text" ng-model="registerpseudoinput" label="pseudo (optional)" class="long"></md-text-float>
+                <md-text-float type="password" ng-model="registerpwinput" label="password" class="long"></md-text-float>
+                <md-text-float type="password" ng-model="registerpwrinput" label="repeat password" class="long"></md-text-float>
               </md-content>
 
               <div class="bottom">
@@ -75,7 +75,7 @@
                 <a href="/" rel="login" class="linkform" style="margin-top:20px;">
                   You already have an account? Log in here
                 </a>
-                <md-button class="md-fab md-primary" md-theme="pink" aria-label="Create my account" style="margin-left: 340px;">
+                <md-button class="md-fab md-primary" md-theme="pink" aria-label="Create my account" style="margin-left: 350px;">
                   <md-icon icon="/images/icons/check52.svg" style="width: 24px; height: 24px;"></md-icon>
                 </md-button>
               </div>
@@ -85,18 +85,20 @@
             <form class="login active">
               <h3 class="panelheader">Login</h3>
               <md-content>
-                <md-text-float type="text" ng-model="loginemailpseudo" label="email/pseudo" class="long"></md-text-float>
-                <md-text-float type="text" ng-model="loginpw" label="password" class="long"></md-text-float>
+                <md-text-float type="text" ng-model="loginemailpseudoinput" label="email/pseudo" class="long"></md-text-float>
+                <md-text-float type="password" ng-model="loginpwinput" label="password" class="long"></md-text-float>
               </md-content>
 
               <div class="bottom">
                 <div class="remember">
                   <md-checkbox>Remember password?</md-checkbox>
                 </div>
-                <a href="/" rel="registration" class="linkform" style="margin-top:20px;">
+                <br>
+                <br>
+                <a href="/" rel="registration" class="linkform" style="margin-top:20px; margin-top:0px;">
                   You don't have an account yet? Register here
                 </a>
-                <md-button class="md-fab md-primary" md-theme="pink" aria-label="Log me in" style="margin-left: 340px; margin-bottom: 10px">
+                <md-button class="md-fab md-primary" md-theme="pink" aria-label="Log me in" style="margin-left: 350px; margin-bottom: 10px">
                   <md-icon icon="/images/icons/check52.svg" style="width: 24px; height: 24px;"></md-icon>
                 </md-button>
               </div>
