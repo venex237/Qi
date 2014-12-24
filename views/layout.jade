@@ -2,11 +2,10 @@ html
   head
     meta(charset='utf8')
     title Qi
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/index.css')
     link(rel='stylesheet', href='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
     script(src='/bower_components/angular/angular.js')
     script(src='/bower_components/angular-animate/angular-animate.js')
-    // <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-route.min.js"></script>
     script(src='/bower_components/angular-aria/angular-aria.js')
     script(src='/jquery/jquery.js')
     script(src='/jquery/jquery-ui/jquery-ui.js')
@@ -17,23 +16,23 @@ html
     // extra, overriding theme files
     link(rel='stylesheet', href='/bower_components/angular-material/themes/pink-theme.css')
     link(rel='stylesheet', href='/bower_components/angular-material/themes/orange-theme.css')
+    link(rel='stylesheet', href='/bower_components/angular-material/themes/indigo-theme.css')
 
     // private javascript files
     script(src='/javascripts/ajax.js')
     script(src='/javascripts/clickh.js')
     script(src='/javascripts/bg.js')
+    script(src='/javascripts/welcomepage/formchanger.js')
     script(src='/javascripts/startscript.js')
     script(src='/javascripts/registration.js')
     script(src='/javascripts/info.js')
+    
     script.
       angular.module('qiApp', [ 'ngMaterial' ]);
       // launch statements
       $(document).ready(function() {
-        //click listeners for tabs in clickh.js
-        //setClickListeners();
         //start method in startscript.js
         start();
-        formwrapper_launch();
       });
   body
     block content

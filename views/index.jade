@@ -2,38 +2,34 @@ extends layout
 
 block content
     div(ng-app='qiApp', layout='column')
-        // The md-toolbar and all of its children will use the indigo theme
+        // The md-toolbar and all of its children will use the pink theme
         md-toolbar(md-theme='pink', md-scroll-shrink='')
             .md-toolbar-tools
                 h3
                     span#headertitle Qi
+                md-icon(icon='/images/icons/check52.svg', style='width: 24px; height: 24px;')
 
         md-whiteframe#panelframe.md-whiteframe-z2(layout-align='center center')
             #form_wrapper.form_wrapper
-                // <md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
                 form.registration
                     h3.panelheader Register
 
-                    md-content
+                    md-content(md-theme='orange')
                         md-text-float.long(type='text', ng-model='registeremailpseudoinput', label='email/pseudo')
                         md-text-float.long(type='text', ng-model='registernameinput', label='name')
                         md-text-float.long(type='text', ng-model='registerpseudoinput', label='pseudo (optional)')
                         md-text-float.long(type='password', ng-model='registerpwinput', label='password')
                         md-text-float.long(type='password', ng-model='registerpwrinput', label='repeat password')
                     .bottom
-                        //
-                          <div class="remember">
-                          <md-checkbox>Remember password?</md-checkbox>
-                          </div>
                         a.linkform(href='/', rel='login', style='margin-top:20px;')
                             You Already have an account? Log in here
 
-                        md-button.md-fab.md-primary(md-theme='pink', aria-label='Create my account', style='margin-left: 350px;')
+                        md-button.md-fab.md-primary(md-theme='orange', aria-label='Create my account', style='margin-left: 350px; margin-bottom:10px;')
                             md-icon(icon='/images/icons/check52.svg', style='width: 24px; height: 24px;')
 
                 form.login.active
                     h3.panelheader Login
-                    md-content
+                    md-content(md-theme='pink')
                         md-text-float.long(type='text', ng-model='loginemailpseudoinput', label='email/pseudo')
                         md-text-float.long(type='password', ng-model='loginpwinput', label='password')
                     .bottom
@@ -43,6 +39,12 @@ block content
                         br
                         a.linkform(href='/', rel='registration', style='margin-top:20px; margin-top:0px;')
                             You Don&apos;t have an account yet? Register here
-                        md-button.md-fab.md-primary(md-theme='pink', aria-label='Log me in', style='margin-left: 350px; margin-bottom: 10px')
+                        md-button#loginbutton.md-fab.md-primary(md-theme='pink', aria-label='Log me in', style='margin-left: 350px; margin-bottom: 10px')
                             md-icon(icon='/images/icons/check52.svg', style='width: 24px; height: 24px;')
-                // </md-whiteframe>
+
+                form.about
+                    h3.panelheader Contributors
+                    p Alabo Derefaka
+                    p Michael Koeppl
+                    p Bruno Kovacevic
+                    p Martina Simic

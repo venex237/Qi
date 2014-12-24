@@ -18,6 +18,10 @@ md-whiteframe {
   margin-right: auto ;
 }
 
+md-toolbar{
+  display:inline-block;
+}
+
 #headertitle{
   font-size: 30px;
 }
@@ -38,7 +42,7 @@ form.active{
 form.login{
     /*width:350px;*/
 }
-form.register{
+form.registration{
 }
 
 form.bottom{
@@ -60,4 +64,9 @@ form.bottom{
 
 .bottom{
     max-height: 170px;
+}
+
+#headertitle{
+  /* makes the cursor show that there's something to click */
+  cursor: pointer;
 }
