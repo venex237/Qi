@@ -1,5 +1,6 @@
 function start(){
   randomizeBackground();
   animateBackground();
-  formwrapper_launch();
+  set_welcome_click_listeners();
+  $("#registerpanel").hide();
 }

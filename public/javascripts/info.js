@@ -17,7 +17,8 @@ function printError(msg){
     $('#panelcontainer').effect('shake');
   }
   // setting error message
-  document.querySelector('#errorDiv').innerHTML = msg;
+  //document.querySelector('#errorDiv').innerHTML = msg;
+  alert(msg);
 }
 
 function printSuccess(msg){

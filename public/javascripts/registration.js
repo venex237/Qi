@@ -2,12 +2,12 @@
  * Created by mko on 21/12/14.
  */
 
-function registerMe(){
-    var email = $('#regemailinput').val();
-    var name = $('#regnameinput').val();
-    var pseudo = $('#regpseudoinput').val();
-    var pw = $('#regpwinput').val();
-    var pwr = $('#regpwrepeatinput').val();
+function register(){
+    var email = $('#emailinput_reg').val();
+    var name = $('#nameinput_reg').val();
+    var pseudo = $('#pseudoinput_reg').val();
+    var pw = $('#pwinput_reg').val();
+    var pwr = $('#pwrinput_reg').val();
 
     if(email == '' || name == '' || pseudo == '' || pw == '' || pwr == ''){
         printError('please fill all fields.');
