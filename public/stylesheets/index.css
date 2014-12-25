@@ -1,39 +1,72 @@
-body{
-  background: #000 url("/images/austria_sg.jpg");
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /*background-color: #E5E5E5;*/
+  /*background-image:url("http://imgur.com/OTfm92s.jpg");*/
+  font-family: 'RobotoDraft', sans-serif;
 }
 
-#loginpanel{
-  padding: 10px;
-  position: absolute;
-  margin: -100px 0 0 -200px;
-  top: 50%;
-  left: 50%;
-  background-color: #ffffff;
-  width: 350px;
-  height: 160px;
+md-whiteframe {
+  background: #ffffff;
+  margin: 50px;
+  padding: 15px;
+  padding-left: 25px;
+  padding-bottom: 1px;
+  max-width: 500px;
+  margin-left: auto ;
+  margin-right: auto ;
 }
 
-#loginbutton_login{
-  margin-top: 5px;
+md-toolbar{
+  display:inline-block;
 }
 
-#gotoreg_login{
-  margin-top: 10px;
-  cursor: pointer;
+#headertitle{
+  font-size: 30px;
 }
 
-#registerpanel{
-  padding: 10px;
-  position: absolute;
-  margin: -100px 0 0 -200px;
-  top: 50%;
-  left: 50%;
-  background-color: #ffffff;
-  width: 350px;
-  height: 240px;
+.form_wrapper{
+    max-width: 400px;
+    max-height: 470px;
 }
 
-#gotologin_reg{
-  margin-top: 10px;
+.form_wrapper form{
+    display:none;
+    background:#fff;
+}
+form.active{
+    display:block;
+}
+
+form.login{
+    /*width:350px;*/
+}
+form.registration{
+}
+
+form.bottom{
+    margin:20px;
+    max-width:100px;
+}
+
+#panelframe{
+    min-width: 450px;
+}
+
+.linkform{
+    margin-bottom: 15px;
+}
+
+.panelheader{
+    font-size: 20px;
+}
+
+.bottom{
+    max-height: 170px;
+}
+
+#headertitle{
+  /* makes the cursor show that there's something to click */
   cursor: pointer;
 }

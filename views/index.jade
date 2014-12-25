@@ -1,20 +1,50 @@
 extends layout
 
 block content
-  center
-    #loginpanel.loginpanel
-        input#emailpseudoinput_login(type="text" placeholder="email/pseudo" maxlength="50")
-        br
-        input#pwinput_login(type="password" placeholder="password" ng-model="pwinput")
-        br
-        p#gotoreg_login You don&apos;t have an account yet? Register here
-        input#loginbutton_login(type="button" value="Log in")
-    #registerpanel.registerpanel
-        input#emailinput_reg(type="text" placeholder="email")
-        input#nameinput_reg(type="text" placeholder="name")
-        input#pseudoinput_reg(type="text" placeholder="pseudonym (optional)")
-        input#pwinput_reg(type="password" placeholder="password")
-        input#pwrinput_reg(type="password" placeholder="repeat password")
-        br
-        p#gotologin_reg You already have an account? Log in here
-        input#regbutton_reg(type="button" value="Create my account")
+    div(ng-app='qiApp', layout='column')
+        // The md-toolbar and all of its children will use the pink theme
+        md-toolbar(md-theme='pink', md-scroll-shrink='')
+            .md-toolbar-tools
+                h3
+                    span#headertitle Qi
+                md-icon(icon='/images/icons/check52.svg', style='width: 24px; height: 24px;')
+
+        md-whiteframe#panelframe.md-whiteframe-z2(layout-align='center center')
+            #form_wrapper.form_wrapper
+                form.registration
+                    h3.panelheader Register
+
+                    md-content(md-theme='orange')
+                        md-text-float.long(type='text', ng-model='registeremailpseudoinput', label='email/pseudo')
+                        md-text-float.long(type='text', ng-model='registernameinput', label='name')
+                        md-text-float.long(type='text', ng-model='registerpseudoinput', label='pseudo (optional)')
+                        md-text-float.long(type='password', ng-model='registerpwinput', label='password')
+                        md-text-float.long(type='password', ng-model='registerpwrinput', label='repeat password')
+                    .bottom
+                        a.linkform(href='/', rel='login', style='margin-top:20px;')
+                            You Already have an account? Log in here
+
+                        md-button.md-fab.md-primary(md-theme='orange', aria-label='Create my account', style='margin-left: 350px; margin-bottom:10px;')
+                            md-icon(icon='/images/icons/check52.svg', style='width: 24px; height: 24px;')
+
+                form.login.active
+                    h3.panelheader Login
+                    md-content(md-theme='pink')
+                        md-text-float.long(type='text', ng-model='loginemailpseudoinput', label='email/pseudo')
+                        md-text-float.long(type='password', ng-model='loginpwinput', label='password')
+                    .bottom
+                        .remember
+                            md-checkbox Remember password?
+                        br
+                        br
+                        a.linkform(href='/', rel='registration', style='margin-top:20px; margin-top:0px;')
+                            You Don&apos;t have an account yet? Register here
+                        md-button#loginbutton.md-fab.md-primary(md-theme='pink', aria-label='Log me in', style='margin-left: 350px; margin-bottom: 10px')
+                            md-icon(icon='/images/icons/check52.svg', style='width: 24px; height: 24px;')
+
+                form.about
+                    h3.panelheader Contributors
+                    p **************
+                    p **************
+                    p **************
+                    p **************
