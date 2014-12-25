@@ -3,36 +3,23 @@ html
     meta(charset='utf8')
     title Qi
     link(rel='stylesheet', href='/stylesheets/index.css')
-    link(rel='stylesheet', href='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
-    script(src='/bower_components/angular/angular.js')
-    script(src='/bower_components/angular-animate/angular-animate.js')
-    script(src='/bower_components/angular-aria/angular-aria.js')
-    script(src='/jquery/jquery.js')
-    script(src='/jquery/jquery-ui/jquery-ui.js')
-    script(src='/bower_components/hammerjs/hammer.min.js')
-    script(src='/bower_components/angular-material/angular-material.js')
-    // default themes and core styles
-    link(rel='stylesheet', href='/bower_components/angular-material/angular-material.css')
-    // extra, overriding theme files
-    link(rel='stylesheet', href='/bower_components/angular-material/themes/pink-theme.css')
-    link(rel='stylesheet', href='/bower_components/angular-material/themes/orange-theme.css')
-    link(rel='stylesheet', href='/bower_components/angular-material/themes/indigo-theme.css')
+    script(src='/components/angular/angular.js')
+    script(src='/components/jquery/jquery.js')
+    script(src='/components/jquery/jquery-ui/jquery-ui.js')
+    link(rel='stylesheet', href='/components/bootstrap/bootstrap_paper.css')
 
     // private javascript files
     script(src='/javascripts/ajax.js')
-    script(src='/javascripts/clickh.js')
     script(src='/javascripts/bg.js')
-    script(src='/javascripts/welcomepage/formchanger.js')
     script(src='/javascripts/startscript.js')
     script(src='/javascripts/registration.js')
     script(src='/javascripts/info.js')
-    
+    script(src='/javascripts/welcome/welcome.js')
+
     script.
-      angular.module('qiApp', [ 'ngMaterial' ]);
-      // launch statements
-      $(document).ready(function() {
-        //start method in startscript.js
-        start();
-      });
+        $(document).ready(function() {
+            start();
+        });       
+
   body
     block content
