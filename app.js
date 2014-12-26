@@ -47,7 +47,7 @@ app.set('view engine', 'jade');
 app.set('development', function () { app.locals.pretty = true; });
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
