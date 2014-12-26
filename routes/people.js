@@ -11,12 +11,27 @@ router.post('/new', function(req, res){
     // return successful json
     res.json({ 'status': 'success' });
 
-    console.log('\nPOST REQUEST REGISTRATION');
-    console.log(req.body.email + '\n' + req.body.name + '\n' + req.body.pseudo + '\n' + req.body.pw + '\n');
+    console.log('\nPOST request for /people/new  ::--> got data');
+    try{
+    	console.log(req.body.email + '\n' + req.body.name + '\n' + req.body.pseudo + '\n' + req.body.pw + '\n');
+	}catch(ex){
+		console.log('ERROR: ' + ex);
+	}
 
     // to do
     // work with passport to authenticate
     //
+});
+
+router.post('/login', function(req, res){
+	res.json({'status': 'success'});
+
+	console.log('\nPOST request for /people/login  ::--> got data');
+	try{
+    	console.log(req.body.emailpseudo + '\n' + req.body.pw + '\n');
+	}catch(ex){
+		console.log('ERROR: ' + ex);
+	}
 });
 
 /* GET home page. */
