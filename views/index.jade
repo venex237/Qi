@@ -2,19 +2,19 @@ extends layout
 
 block content
   center
-    #loginpanel.loginpanel
-        input#emailpseudoinput_login(type="text" placeholder="email/pseudo" maxlength="50")
+    #loginpanel.loginpanel.active
+        input#emailpseudoinput_login.login(type="text" placeholder="email/pseudo" maxlength="50")
         br
-        input#pwinput_login(type="password" placeholder="password" ng-model="pwinput")
+        input#pwinput_login.login(type="password" placeholder="password" ng-model="pwinput")
         br
-        p#gotoreg_login You don&apos;t have an account yet? Register here
-        input#loginbutton_login(type="button" value="Log in")
+        p#gotoreg_login.reg You don&apos;t have an account yet? Register here
+        input#loginbutton_login.login(type="button" value="Log in")
     #registerpanel.registerpanel
-        input#emailinput_reg(type="text" placeholder="email")
-        input#nameinput_reg(type="text" placeholder="name")
-        input#pseudoinput_reg(type="text" placeholder="pseudonym (optional)")
-        input#pwinput_reg(type="password" placeholder="password")
-        input#pwrinput_reg(type="password" placeholder="repeat password")
+        input#emailinput_reg.reg(type="text" placeholder="email")
+        input#nameinput_reg.reg(type="text" placeholder="name")
+        input#pseudoinput_reg.reg(type="text" placeholder="pseudonym (optional)")
+        input#pwinput_reg.reg(type="password" placeholder="password")
+        input#pwrinput_reg.reg(type="password" placeholder="repeat password")
         br
-        p#gotologin_reg You already have an account? Log in here
-        input#regbutton_reg(type="button" value="Create my account")
+        p#gotologin_reg.reg You already have an account? Log in here
+        input#regbutton_reg.reg(type="button" value="Create my account")
