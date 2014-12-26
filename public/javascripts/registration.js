@@ -10,7 +10,7 @@ function register(){
     var pwr = $('#pwrinput_reg').val();
 
     if(email == '' || name == '' || pseudo == '' || pw == '' || pwr == ''){
-        printError('please fill all fields.');
+        printError('please fill all fields.', 'registerpanel');
     }else if(!checkIfEmailInString(email)){
         printError('the email address you entered is not valid.');
     }else if(name.length < 4){
@@ -30,7 +30,7 @@ function register(){
             }else{
                 alert('NOU');
             }
-        })
+        });
             /*.success(function(data){
                 if(data.status == 'success'){
                     alert('YAS');
@@ -41,10 +41,4 @@ function register(){
                 }
             });*/
     }
-}
-
-// return true if email is valid
-function checkIfEmailInString(text) {
-    var re = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
-    return re.test(text);
 }
