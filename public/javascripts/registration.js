@@ -6,7 +6,7 @@ function register(){
     var email = $('#emailinput_reg').val();
     var name = $('#nameinput_reg').val();
     var pseudo = $('#pseudoinput_reg').val();
-    var pw = $('#pwinput_reg').val();
+    var wp = $('#pwinput_reg').val();
     var pwr = $('#pwrinput_reg').val();
 
     if(email == '' || name == '' || pseudo == '' || pw == '' || pwr == ''){
@@ -15,13 +15,13 @@ function register(){
         printError('the email address you entered is not valid.');
     }else if(name.length < 4){
         printError('the name you entered was not long enough.');
-    }else if(pw.length < 6){
+    }else if(wp.length < 6){
         printError('the password you entered was not long enough.')
-    }else if(pw != pwr){
+    }else if(wp != pwr){
         printError('the passwords you entered do not match.')
     }else{
         // registration post request is handled by /routes/people.js
-        $.post('/people/new', {'email': email, 'name': name, 'pseudo': pseudo, 'pw': pw}, function(data){
+        $.post('/people/new', {'email': email, 'name': name, 'pseudo': pseudo, 'wp': wp}, function(data){
             //alert('data sent');
             if(data.status == 'success'){
                 alert('success');
