@@ -7,9 +7,9 @@ function register(){
     var name = $('#nameinput_reg').val();
     var pseudo = $('#pseudoinput_reg').val();
     var wp = $('#pwinput_reg').val();
-    var pwr = $('#pwrinput_reg').val();
+    var wpr = $('#pwrinput_reg').val();
 
-    if(email == '' || name == '' || pseudo == '' || pw == '' || pwr == ''){
+    if(email == '' || name == '' || pseudo == '' || wp == '' || wpr == ''){
         printError('please fill all fields.', 'registerpanel');
     }else if(!checkIfEmailInString(email)){
         printError('the email address you entered is not valid.');
@@ -17,7 +17,7 @@ function register(){
         printError('the name you entered was not long enough.');
     }else if(wp.length < 6){
         printError('the password you entered was not long enough.')
-    }else if(wp != pwr){
+    }else if(wp != wpr){
         printError('the passwords you entered do not match.')
     }else{
         // registration post request is handled by /routes/people.js
